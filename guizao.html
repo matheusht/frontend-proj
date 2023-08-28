@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" href="guizinha.css" />
+    <title>HTML Header with Burger Menu</title>
+    <script>
+      function toggleMenu() {
+        var content = document.querySelector(".content");
+        content.classList.toggle("active");
+      }
+    </script>
+  </head>
+  <body>
+    <div class="header">
+      <h1>Guilherme Stefanini</h1>
+      <div class="content">
+        <ul class="menu">
+          <li><a href="#">Instragam</a></li>
+          <li><a href="#">Whatsapp</a></li>
+          <li><a href="#">Telegram</a></li>
+          <li><a href="#">Onlyfans</a></li>
+        </ul>
+        <div class="burger-icon" onclick="toggleMenu()">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="#fff"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
+            <line x1="3" y1="12" x2="21" y2="12" />
+            <line x1="3" y1="6" x2="21" y2="6" />
+            <line x1="3" y1="18" x2="21" y2="18" />
+          </svg>
+        </div>
+      </div>
+    </div>
+    <div id="carousel-container">
+      <div id="carousel-images" style="display: flex">
+        <img class="carousel-image" src="FvkqR6jXgAAAHrV.jpg" alt="Image 8" />
+        <img class="carousel-image" src="Fwv1BubWwAEL0ux.jpg" alt="Image 7" />
+        <img
+          class="carousel-image"
+          src="248444529_249038947190574_6176365751636677955_n.jpg"
+          alt="Image 1"
+        />
+        <img
+          class="carousel-image"
+          src="244075068_557904595477022_554549047746175530_n.jpg"
+          alt="Image 2"
+        />
+        <img
+          class="carousel-image"
+          src="160223387_850295012200926_7863751176058647204_n.jpg"
+          alt="Image 3"
+        />
+        <img
+          class="carousel-image"
+          src="94012580_669065433638539_2779772978553025588_n.jpg"
+          alt="Image 4"
+        />
+        <img
+          class="carousel-image"
+          src="289658790_586283579732168_4417232579455306871_n.jpg"
+          alt="Image 5"
+        />
+        <img
+          class="carousel-image"
+          src="130305864_241981037271526_5991428505602083842_n.jpg"
+          alt="Image 6"
+        />
+        <img class="carousel-image" src="KauSinha.jpg" alt="Image 7" />
+
+        <img class="carousel-image" src="Brunin.jpg" alt="Image 8" />
+      </div>
+    </div>
+
+    <button id="prev-button">AntedeGemon</button>
+    <button id="next-button">Deposena</button>
+    <script>
+      const carouselImages = document.getElementById("carousel-images");
+      const prevButton = document.getElementById("prev-button");
+      const nextButton = document.getElementById("next-button");
+
+      let currentPosition = 0;
+      const imageWidth =
+        document.getElementsByClassName("carousel-image")[0].offsetWidth;
+
+      function moveCarousel() {
+        carouselImages.style.transform = `translateX(${currentPosition}px)`;
+      }
+
+      function slideToPrev() {
+        currentPosition += imageWidth;
+        moveCarousel();
+      }
+
+      function slideToNext() {
+        currentPosition -= imageWidth;
+        moveCarousel();
+      }
+
+      prevButton.addEventListener("click", slideToPrev);
+      nextButton.addEventListener("click", slideToNext);
+    </script>
+  </body>
+</html>
